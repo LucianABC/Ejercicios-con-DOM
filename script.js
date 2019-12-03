@@ -25,3 +25,10 @@ llenarLista = () => {
         li.innerHTML =  valor;
     };
 };
+
+changeTitle = () => {
+    let nuevoTitulo =  document.getElementById("nuevoTitulo").value;
+    document.getElementById("titulo1").innerHTML=nuevoTitulo;
+
+
+};
