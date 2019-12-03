@@ -23,12 +23,10 @@ llenarLista = () => {
     for (let li of lista){
         valor++;
         li.innerHTML =  valor;
-    };
+    }
 };
 
 changeTitle = () => {
     let nuevoTitulo =  document.getElementById("nuevoTitulo").value;
     document.getElementById("titulo1").innerHTML=nuevoTitulo;
-
-
 };
