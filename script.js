@@ -42,7 +42,7 @@ const changeTitle = () => {
  * Escribir una funcion que nos permita pasarle un elemento 
  * y un color, y  le cambie el color de fondo al elemento.
  */
-/*
+
 
 const changeBackgroundColor = (elemento, color) => {
     let coso = document.querySelector(elemento);
@@ -72,7 +72,7 @@ const changeBackgroundColor2 = (elemento, color) => {
     
     return `rgb(${r},${g},${b})`
 
-     };
+};
 
   // 003
 /**
@@ -84,6 +84,20 @@ const changeBackgroundColor2 = (elemento, color) => {
    * Asignarle algun estilo para diferenciar la clase
    * "active" de cuando no se encuentra la misma.
    */
+
+
+
+const addActive = () => {
+    let elementos = document.getElementsByClassName("list-item");
+    for (let elemento of elementos ){
+        elemento.classList.remove("active");
+    }
+    let activar = elementos[4];
+    activar.classList.add("active");
+}   
+
+
+
 
 // 004
 
