@@ -96,9 +96,6 @@ const addActive = () => {
     activar.classList.add("active");
 }   
 
-
-
-
 // 004
 
 /**
@@ -106,6 +103,19 @@ const addActive = () => {
  * de un titulo y otra para reducirlo.
  */
 
+    const increaseTitle = (titulo) => { 
+        let title = document.querySelector(titulo);
+        let fontSize = getComputedStyle(title).getPropertyValue("font-size");
+        fontSize= parseFloat(fontSize);
+        title.style.fontSize = fontSize + 10 + "px";
+    }
+
+    const decreaseTitle = (titulo) => { 
+        let title = document.querySelector(titulo);
+        let fontSize = getComputedStyle(title).getPropertyValue("font-size");
+        fontSize= parseFloat(fontSize);
+        title.style.fontSize = fontSize - 10 + "px";
+    }
  // 005
  /**
   * Crear una lista que contenga imagenes, de las 
