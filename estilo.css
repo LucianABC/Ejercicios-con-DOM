@@ -2,3 +2,12 @@
     background-color: #80DEEA;
      
 }
+
+
+.list2-item { 
+    display: none;
+}
+
+.display {
+    display: block;
+}

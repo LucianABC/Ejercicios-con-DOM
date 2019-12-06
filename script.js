@@ -116,6 +116,7 @@ const addActive = () => {
         fontSize= parseFloat(fontSize);
         title.style.fontSize = fontSize - 10 + "px";
     }
+
  // 005
  /**
   * Crear una lista que contenga imagenes, de las 
@@ -124,3 +125,20 @@ const addActive = () => {
   * de imagen cada vez que la ejecuto, segun el orden
   * en que estan declaradas.
   */
+const hideImg =() => {
+    let imagenes = document.getElementsByClassName("list2-item");
+    let indice;
+    for (let i = 0; i<imagenes.length; i++){
+        if (imagenes[i].classList.contains("display")) {
+            indice = i;
+        }
+    }
+    imagenes[indice].classList.remove("display");
+     
+    if (indice == (imagenes.length-1)) { 
+        indice = 0;
+        imagenes[indice].classList.add("display");
+    } else { 
+        imagenes[indice+1].classList.add("display");
+    }
+} 
