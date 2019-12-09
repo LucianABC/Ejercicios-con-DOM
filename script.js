@@ -87,12 +87,12 @@ const changeBackgroundColor2 = (elemento, color) => {
 
 
 
-const addActive = () => {
+const addActive = (indice) => {
     let elementos = document.getElementsByClassName("list-item");
     for (let elemento of elementos ){
         elemento.classList.remove("active");
     }
-    let activar = elementos[4];
+    let activar = elementos[indice];
     activar.classList.add("active");
 }   
 
@@ -136,9 +136,9 @@ const hideImg =() => {
     imagenes[indice].classList.remove("display");
      
     if (indice == (imagenes.length-1)) { 
-        indice = 0;
-        imagenes[indice].classList.add("display");
-    } else { 
+        indice = -1;
+    }  
+    
         imagenes[indice+1].classList.add("display");
-    }
+    
 } 
