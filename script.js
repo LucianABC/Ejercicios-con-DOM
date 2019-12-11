@@ -161,7 +161,8 @@ const hideImg =() => {
 //1.
     let toDoList = document.querySelector("#toDo-list");
     const addButton = document.querySelector("#addButton");
-    
+    let inputBox = document.querySelector("#newToDo");
+
     const addTask = event => {
         let li = document.createElement("li");
         li.className="toDo-el";
@@ -179,8 +180,7 @@ const hideImg =() => {
         li.appendChild(checkbox)
         
         let p = document.createElement("p");
-        let texto = document.querySelector("#newToDo");
-        p.innerHTML=texto.value;
+        p.innerHTML=inputBox.value;
         li.appendChild(p);
 
         let deleteButton = document.createElement("button");
@@ -197,18 +197,6 @@ const hideImg =() => {
     }
 
     addButton.onclick=addTask; //si hago click funciona, ver como hacer para que cuando pongo enter tambien
- 
- 
- 
-//4.
- const checkbox = document.querySelector("#done");
- const taskDone= event => {
-     const toDoItem= checkbox.parentElement;
-     "toDoItem > li"
-
-
- }
-
 
  // 002
 /**
@@ -218,4 +206,14 @@ const hideImg =() => {
  * y que esos mismos bordes y color vuelvan al 
  * estado anterior cuando sacamos el foco (blur).
  */
+ let defaultStyle = inputBox.style.border; 
 
+ const focusStyle = event => {
+     inputBox.style.borderColor="#a748d4";
+     inputBox.style.borderWidth="3px";
+ }
+ const blurStyle = event => {
+    inputBox.style.border=defaultStyle;
+ }
+inputBox.addEventListener("focus", focusStyle);
+inputBox.addEventListener("blur", blurStyle);
