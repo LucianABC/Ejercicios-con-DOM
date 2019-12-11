@@ -157,6 +157,7 @@ const hideImg =() => {
  *  que me permita tachar el elemento de la lista
  *  como resuelto. 
  */
+
 //1.
     let toDoList = document.querySelector("#toDo-list");
     const addButton = document.querySelector("#addButton");
@@ -179,13 +180,30 @@ const hideImg =() => {
         deleteButton.type="submit";
         deleteButton.id="deleteItem";
         deleteButton.innerHTML="Eliminar";
+        deleteButton.addEventListener("click", ()=>{
+            let li = deleteButton.parentElement;
+            li.parentNode.removeChild(li);        
+        });
         li.appendChild(deleteButton);
 
         toDoList.appendChild(li);
     }
 
     addButton.onclick=addTask; //si hago click funciona, ver como hacer para que cuando pongo enter tambien
- //4.
+ 
+//3.
+    
+
+    const deleteToDo = event => {
+      
+
+    deleteButton.onclick=deleteToDo;
+
+    }
+
+ 
+ 
+//4.
  const checkbox = document.querySelector("#done");
  const taskDone= event => {
      const toDoItem= checkbox.parentElement;
@@ -204,7 +222,3 @@ const hideImg =() => {
  * estado anterior cuando sacamos el foco (blur).
  */
 
- // 003
- /**
-  * 
-  */
