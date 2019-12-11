@@ -169,6 +169,13 @@ const hideImg =() => {
         let checkbox = document.createElement("input");
         checkbox.type="checkbox";
         checkbox.id="done";
+        checkbox.addEventListener("change", ()=>{
+            if (checkbox.checked){
+                p.style.textDecoration="line-through";
+            } else {
+                p.style.textDecoration="none";
+            }
+        });
         li.appendChild(checkbox)
         
         let p = document.createElement("p");
@@ -191,16 +198,6 @@ const hideImg =() => {
 
     addButton.onclick=addTask; //si hago click funciona, ver como hacer para que cuando pongo enter tambien
  
-//3.
-    
-
-    const deleteToDo = event => {
-      
-
-    deleteButton.onclick=deleteToDo;
-
-    }
-
  
  
 //4.
